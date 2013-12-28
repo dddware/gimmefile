@@ -2,5 +2,7 @@ extends layout
 
 block content
   form.upload(method="post", action="/upload", enctype="multipart/form-data")
-    input(type="file", name="upload")
+    label(for="upload-input")
+      | Glisser un fichier ou cliquer pour parcourir...
+      input(id="upload-input", type="file", name="upload")
     button.upload-button(type="submit") upload
