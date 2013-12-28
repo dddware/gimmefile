@@ -5,8 +5,8 @@ block content
     section.upload-form__content
       h2.upload-form__title Upload a file to <br> "My bucket"
       label(for="upload-input")
-        | Glisser un fichier ou cliquer pour uploader
-        input.upload-form__input(type="file", name="upload")
+        .filename Glisser un fichier ou cliquer pour uploader
+        input#upload.upload-form__input(type="file", name="upload")
       label(for="email") Your email
       input#email(type="email", placeholder="john@gimmefile.io")
       label(for="guest") Guests
