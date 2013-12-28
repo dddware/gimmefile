@@ -1,15 +1,6 @@
 extends layout
 
 block content
-  form.upload-form(method="post", action="/upload", enctype="multipart/form-data")
-    section.upload-form__content
-      h2.upload-form__title Upload a file to <br> "My bucket"
-      label(for="upload-input")
-        | Glisser un fichier ou cliquer pour uploader
-        input.upload-form__input(type="file", name="upload")
-      label(for="email") Your email
-      input#email(type="email", placeholder="john@gimmefile.io")
-      label(for="guest") Guests
-      input#guest(type="email", placeholder="jade@gimmefile.io")
-      a.more-guest + more
-      button.upload-form__button(type="submit") upload
+  section.bucket
+    h1.bucket__title My bucket
+    p.bucket_description My soul felt so safe up here, no self-centered natives destroying our Earth. I am sane! I don't understand a word you're sayin'! ...there's another case study for anthropology. I ain't sayin' anything that could be construed as an apology...
