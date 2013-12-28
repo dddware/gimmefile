@@ -1,3 +1,7 @@
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,700");
+* {
+  box-sizing: border-box;
+}
 body {
   font-family: open sans;
   color: #1e2229;
@@ -13,29 +17,38 @@ a {
   background: #f2f2f2;
   padding: 2em 0;
 }
-h1 {
+h1,
+h2 {
   text-align: center;
   color: #34a0ca;
+  font-weight: 400;
+}
+h2 {
   font-weight: 100;
 }
-.upload {
-  height: 24em;
-  width: 24em;
-  padding: 1em;
+.upload-form {
+  min-height: 24em;
+  max-width: 24em;
+  padding: 2em 3em;
   margin: 0 auto;
   background: #f9f9f9;
   border-radius: 5px;
   border: 1px solid #ddd;
   border-bottom-color: #ccc;
-  text-align: center;
   box-shadow: inset 0 1px 1px rgba(255,255,255,0.4);
 }
+label {
+  display: block;
+  font-size: 0.9em;
+  padding-left: 0.2em;
+  color: #777;
+}
 label[for="upload-input"] {
-  display: inline-block;
-  background: #f2f2f2;
   padding: 0.6em 1.6em;
-  margin: 1em auto;
-  max-width: 15em;
+  margin: 2em auto;
+  max-width: 20em;
+  text-align: center;
+  background: #fff;
   border-radius: 3px;
   border: 1px dashed #34a0ca;
   color: #34a0ca;
@@ -44,7 +57,7 @@ label[for="upload-input"] input {
   opacity: 0;
   position: absolute;
 }
-.upload-button {
+.upload-form__button {
   cursor: pointer;
   padding: 0.6em 1.6em;
   display: block;
@@ -56,12 +69,21 @@ label[for="upload-input"] input {
   border-radius: 3px;
   border: 1px solid #3198c0;
 }
-input[type="text"] {
+.more-guest {
+  float: right;
+  font-size: 0.8em;
+  margin-top: -1.2em;
+}
+input[type="text"],
+input[type="email"] {
   -webkit-appearence: none;
+  width: 100%;
+  margin-bottom: 1em;
   border: 1px solid #ccc;
-  border-bottom-color: #bbb;
+  border-bottom-color: #ddd;
   border-radius: 3px;
   outline: none;
+  color: #34a0ca;
   font-size: 1.2em;
   padding: 0.3em;
 }
