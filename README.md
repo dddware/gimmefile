@@ -2,6 +2,26 @@
 
 Aplication de création d'url unique pour la réception de fichier.
 
+## Installation
+
+### Usage classique
+
+```shell
+$ git clone git@github.com:dddware/gimmefile.git
+$ cd gimmefile
+$ npm install
+$ node app # ou npm start
+```
+
+### Avec supervisor
+
+Il est recommandé d'utiliser supervisor qui va assurer le redémarrage du serveur Express lors de la modification des fichiers. Remplacez simplement la dernière étape par :
+
+```shell
+npm install -g supervisor
+supervisor app.js
+```
+
 ## TODO
 
 - page de génération de l'url, on aura besoin de :
