@@ -1,8 +1,8 @@
 extends layout
 
 block content
-    h1 Gimmefile
+  h1 Gimmefile
 
-    form(method="post", action="/upload", enctype="multipart/form-data")
-        input(type="file", name="upload")
-        button(type="submit")
+  form.upload(method="post", action="/upload", enctype="multipart/form-data")
+    input(type="file", name="upload")
+    button.upload-button(type="submit") upload
