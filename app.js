@@ -7,9 +7,11 @@ var express = require('express')
   , routes = require('./routes')
 //  , user = require('./routes/user')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
+  , livereload = require('express-livereload');
 
 var app = express();
+livereload(app, { watchDir: process.cwd() });
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
