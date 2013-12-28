@@ -1,8 +1,6 @@
 extends layout
 
 block content
-  form.upload-form(method="post", action="/upload", enctype="multipart/form-data")
-    section.upload-form__content
-      h1.upload-form__title Upload a file to "My bucket"
-      input.upload-form__input(type="file", name="upload")
-      button.upload-form__button(type="submit") upload
+  section.bucket
+    h1.bucket__title My bucket
+    p.bucket_description lolu

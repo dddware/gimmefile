@@ -7,24 +7,13 @@ var fs = require('fs');
 
 
 
-exports.index = function(req, res) {
-    res.render('index');
+exports.get = function(req, res) {
+    res.render('upload');
 };
 
 
 
-exports.create = function(req, res) {
-};
-
-
-
-exports.bucket = function(req, res) {
-    res.render('bucket');
-};
-
-
-
-exports.upload = function(req, res) {
+exports.post = function(req, res) {
     var upload;
 
     if (upload = req.files.upload) {
