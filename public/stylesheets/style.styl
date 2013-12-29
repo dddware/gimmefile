@@ -11,7 +11,14 @@ body
   color #1e2229 
   margin 0
   background-color #fff
-  font-size 16px
+  font-size 16px  
+  &:hover .upload-form:before
+    top -0.7em
+
+ul, li
+  list-style-type none
+  margin 0
+  padding 0
 
 a 
   color blue
@@ -47,6 +54,8 @@ h2
 
 
 .content
+  position relative
+  overflow hidden
   max-width 24em
   padding 2em 3em
   margin 0 auto
@@ -54,6 +63,16 @@ h2
   border-radius 5px
   border-bottom-color #ccc
   box-shadow inset 0 1px 1px rgba(255,255,255,0.4), 0 1px 2em rgba(0,0,0,0.2)
+  &:before
+    content '⬍'
+    position absolute
+    display block
+    width 100%
+    color #ddd
+    left 0
+    top -1.1em
+    font-size 8em
+    transition top 0.3s
 
 
 
@@ -88,17 +107,44 @@ label[for="upload-input"]
     left 0
     z-index 1
 
-button
+button(color)
   cursor pointer
   padding 0.6em 1.6em
-  display block 
+  display inline-block 
   margin 1em auto
   text-transform uppercase
   font-weight 700
-  background blue
-  color: #fff
+  background color
+  background linear-gradient(color, darken(color,10%))
+  color #fff
+  text-shadow 0 1px 1px darken(color, 10%)
   border-radius 3px
-  border 1px solid darken(blue, 5%)
+  border 1px solid darken(color, 10%)
+  outline none
+  &:hover, &:focus
+    box-shadow inset 0 1px 1px lighten(color, 20%)
+    border 1px solid darken(color, 30%)
+  &:active 
+    background darken(color, 5%)
+    box-shadow inset 0 1px 1px darken(color, 20%)
+  a 
+    color #fff
+
+
+button
+  button(blue)
+  &.second
+    button(gold)
+  &.third
+    button(orange)
+
+
+.button-container 
+  text-align center
+  clear both
+  margin-top: 1em
+  button 
+    margin auto 0.4em
 
 .more-guest
   cursor pointer
