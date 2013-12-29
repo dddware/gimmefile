@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  form.upload-form(method="post", action="/upload", enctype="multipart/form-data")
+  form.upload-form.content(method="post", action="/upload", enctype="multipart/form-data")
     section.upload-form__content
       h2.upload-form__title Upload a file to <br> "My bucket"
       label(for="upload-input")
