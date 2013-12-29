@@ -4,15 +4,17 @@ block content
   form.create-form.content(method="post", action="/")
     section.create-form__content
       h1.create-form__title Créer un bucket
-      if errors
-        aside.create-form__alert--error
+
+      if flash.error && flash.error.length
+        aside.alert-error
           ul
-            each error in errors
+            each error in flash.error
               li= error
+
       label Nom du bucket
-      input.create-form__input--name(type="text", name="name")
+      input.create-form__input--name(type="text", name="name", value=post.name)
       label Description
-      input.create-form__input--description(type="text", name="description")
+      input.create-form__input--description(type="text", name="description", value=post.description)
       .button-container
         button.third ?
         button.second: a(href="/upload/0") Upload

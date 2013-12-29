@@ -29,10 +29,17 @@ exports.post = function(req, res) {
       description: req.body.description
     }, function (err, bucket) {
       if (err) {
-        res.render('create', { errors: err.errors });
+        for (key in err.errors) {
+          req.session.flash.error.push(err.errors[key].message);
+        }
+
+        req.session.post.name = req.body.name;
+        req.session.post.description = req.body.description;
+
+        res.redirect('/');
       } else {
-        req.session.success = req.session.success || [];
-        req.session.success.push('lolilol');
+        req.session.flash.success.push('Bucket "' + bucket.name + '" créé avec succès');
+
         res.redirect('/bucket/' + bucket.secret);
       }
     });
