@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	moreButton.addEventListener('click', function() {
 		guests.appendChild(document.getElementById('guest').cloneNode(true));
+		guests.appendChild(moreButton);
 	})
 
 })
