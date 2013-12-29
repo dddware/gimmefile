@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		guests = document.querySelector('.guests');
 
 
-	fileInput.addEventListener('change', function() {
+	fileInput && fileInput.addEventListener('change', function() {
 		files = this.files;
 
 		if (fileInput) {
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	})
 
 
-	moreButton.addEventListener('click', function() {
+	moreButton && moreButton.addEventListener('click', function() {
 		newElement = document.getElementById('guest').cloneNode(true);
 		var newElement = guests.insertBefore(newElement, moreButton).setAttribute('placeholder','Nouvel invité');
 	})
