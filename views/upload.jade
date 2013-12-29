@@ -8,8 +8,9 @@ block content
         .filename Glisser vos fichiers ou cliquer pour uploader
         input#upload.upload-form__input(type="file", name="upload", multiple)
       label(for="email") Votre email
-      input#email(type="email", placeholder="john@gimmefile.io")
-      label(for="guest") Envoyer à 
-      input#guest(type="email", placeholder="jade@gimmefile.io")
-      a.more-guest + plus
+      input#email(type="email", placeholder="victor.darras@gmail.com")
+      .control.guests  
+        label(for="guest") Envoyer à 
+        input#guest(type="email", placeholder="tom.panier@gmail.com")
+        a.more-guest + plus
       button.upload-form__button(type="submit") upload

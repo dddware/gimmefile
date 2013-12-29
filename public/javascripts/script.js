@@ -1,19 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
   
 	var 
-		fullPath = document.getElementById('upload'),
+		fileInput = document.getElementById('upload'),
 		fileName = document.querySelector('.filename'),
-		filenames = [];
+		filenames = [],
+		moreButton = document.querySelector('.more-guest'),
+		guests = document.querySelector('.guests');
 
-	fullPath.addEventListener('change', function() {
+
+	fileInput.addEventListener('change', function() {
 		files = this.files;
-		
-		if (fullPath) {
+
+		if (fileInput) {
 			for (var i = 0; i < files.length; i++)
 	    	filenames = filenames + files[i].name + '<br/>';
 
 			fileName.innerHTML = filenames;
 		}
+		else (
+			fileName.innerHTML = "Please retry"
+		)
+	})
+
+
+	moreButton.addEventListener('click', function() {
+		guests.appendChild(document.getElementById('guest').cloneNode(true));
 	})
 
 })

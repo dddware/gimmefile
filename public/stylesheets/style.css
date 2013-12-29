@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: open sans;
+  font-family: "open sans", "Helvetica", sans-serif;
   color: #1e2229;
   margin: 0;
   background-color: #fff;
@@ -11,6 +11,9 @@ body {
 }
 a {
   color: #34a0ca;
+}
+a:hover {
+  color: #2a80a2;
 }
 .container {
   margin: 0;
@@ -30,15 +33,12 @@ h2 {
 }
 .logo {
   display: inline-block;
+  font-size: 1.2em;
   width: 1.5em;
   height: 1.5em;
   line-height: 1.5em;
-  background: #34a0ca;
-  background: linear-gradient(#34a0ca, #2f90b6);
-  box-shadow: 0 1px 1px rgba(255,255,255,0.3);
-  color: #fff;
-  border: 1px solid #2c88ac;
-  text-shadow: 0.25em 0 0 #ffd700, -0.25em 0 0 #ffa500;
+  color: #34a0ca;
+  text-shadow: 0.2em -0.3em 0 #ffd700, -0.2em -0.15em 0 #ffa500;
   border-radius: 0.1em;
 }
 .upload-form {
@@ -59,17 +59,23 @@ label {
   color: #777;
 }
 label[for="upload-input"] {
+  cursor: pointer;
   position: relative;
   padding: 0.6em 1.6em;
   margin: 2em auto;
   max-width: 20em;
-  text-align: center;
   background: #fff;
   border-radius: 3px;
   border: 1px dashed #34a0ca;
+  text-align: center;
   color: #34a0ca;
+  transition: all 0.1s;
+}
+label[for="upload-input"]:hover {
+  background: #f5fafc;
 }
 label[for="upload-input"] input {
+  cursor: pointer;
   opacity: 0;
   position: absolute;
   top: 0;
@@ -91,6 +97,7 @@ label[for="upload-input"] input {
   border: 1px solid #3198c0;
 }
 .more-guest {
+  cursor: pointer;
   float: right;
   font-size: 0.8em;
   margin-top: -1.2em;
@@ -99,15 +106,21 @@ input[type="text"],
 input[type="email"] {
   width: 100%;
   margin-bottom: 1em;
+  padding: 0.3em;
   border: 1px solid #ccc;
   border-bottom-color: #ddd;
   border-radius: 3px;
   background: #fff;
   background: linear-gradient(#f8f8f8, #fff);
   outline: none;
+  font-family: "open sans", "Helvetica", sans-serif;
   color: #34a0ca;
-  font-size: 1.2em;
-  padding: 0.3em;
+  font-size: 1.1em;
+  transition: all 0.1s;
+}
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border: 1px solid #34a0ca;
 }
 .bucket_description {
   max-width: 40em;

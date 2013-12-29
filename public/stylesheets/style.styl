@@ -1,12 +1,13 @@
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:400,300,700')
 
 blue = #34A0CA
+sansSerif = "open sans", "Helvetica", sans-serif
 
 *
   box-sizing border-box
 
 body 
-  font-family open sans
+  font-family sansSerif
   color #1e2229 
   margin 0
   background-color #fff
@@ -14,6 +15,8 @@ body
 
 a 
   color blue
+  &:hover 
+    color darken(blue, 20%)
 
 .container
   margin 0
@@ -32,15 +35,12 @@ h2
 
 .logo 
   display inline-block
+  font-size 1.2em
   width 1.5em
   height 1.5em
   line-height 1.5em
-  background blue
-  background linear-gradient(blue, darken(blue, 10%))
-  box-shadow 0 1px 1px rgba(255,255,255,0.3)
-  color #fff
-  border 1px solid darken(blue, 15%)
-  text-shadow 0.25em 0 0 gold, -0.25em 0 0 orange
+  color blue
+  text-shadow 0.2em -0.3em 0 gold, -0.2em -0.15em 0 orange
   border-radius 0.1em
 
 
@@ -66,16 +66,21 @@ label
   color #777
 
 label[for="upload-input"]
+  cursor pointer
   position relative
   padding 0.6em 1.6em
   margin 2em auto 
   max-width 20em
-  text-align center
   background #fff
   border-radius 3px
   border 1px dashed blue
+  text-align center
   color blue
+  transition all 0.1s
+  &:hover
+    background lighten(blue, 95%)
   input 
+    cursor pointer
     opacity 0
     position absolute
     top 0
@@ -97,6 +102,7 @@ label[for="upload-input"]
   border 1px solid darken(blue, 5%)
 
 .more-guest
+  cursor pointer
   float right
   font-size 0.8em
   margin-top -1.2em
@@ -105,15 +111,19 @@ input[type="text"],
 input[type="email"]
   width 100%
   margin-bottom 1em
+  padding 0.3em
   border 1px solid #ccc
   border-bottom-color #ddd
   border-radius 3px
   background #fff
   background linear-gradient(#F8F8F8, #FFF)
   outline none
+  font-family sansSerif
   color blue
-  font-size 1.2em
-  padding 0.3em
+  font-size 1.1em
+  transition all 0.1s
+  &:focus
+    border: 1px solid blue
 
 // BUCKET
 .bucket_description 
