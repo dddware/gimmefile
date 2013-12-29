@@ -1,15 +1,19 @@
-var 
-	fullPath = document.getElementById('upload'),
-	fileName = document.querySelector('.filename');
+document.addEventListener('DOMContentLoaded', function() {
+  
+	var 
+		fullPath = document.getElementById('upload'),
+		fileName = document.querySelector('.filename'),
+		filenames = [];
 
-fullPath.addEventListener('change', function() {
-	fullPath = this.value;
-	if (fullPath) {
-		var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
-		var filename = fullPath.substring(startIndex);
-		if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
-			filename = filename.substring(1);
+	fullPath.addEventListener('change', function() {
+		files = this.files;
+		
+		if (fullPath) {
+			for (var i = 0; i < files.length; i++)
+	    	filenames = filenames + files[i].name + '<br/>';
+
+			fileName.innerHTML = filenames;
 		}
-		fileName.innerHTML = filename;
-	}
+	})
+
 })

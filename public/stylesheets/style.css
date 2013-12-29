@@ -14,8 +14,9 @@ a {
 }
 .container {
   margin: 0;
-  background: #f2f2f2;
+  background: #34a0ca;
   padding: 2em;
+  box-shadow: inset 0 13em 8em rgba(255,255,255,0.1);
 }
 h1,
 h2 {
@@ -24,7 +25,21 @@ h2 {
   font-weight: 400;
 }
 h2 {
+  margin-top: 0.5em;
   font-weight: 100;
+}
+.logo {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+  background: #34a0ca;
+  background: linear-gradient(#34a0ca, #2f90b6);
+  box-shadow: 0 1px 1px rgba(255,255,255,0.3);
+  color: #fff;
+  border: 1px solid #2c88ac;
+  text-shadow: 0.25em 0 0 #ffd700, -0.25em 0 0 #ffa500;
+  border-radius: 0.1em;
 }
 .upload-form {
   min-height: 24em;
@@ -33,9 +48,9 @@ h2 {
   margin: 0 auto;
   background: #f9f9f9;
   border-radius: 5px;
-  border: 1px solid #ddd;
+  border: 1px solid #2f90b6;
   border-bottom-color: #ccc;
-  box-shadow: inset 0 1px 1px rgba(255,255,255,0.4);
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.4), 0 1px 2em rgba(0,0,0,0.2);
 }
 label {
   display: block;
@@ -82,12 +97,13 @@ label[for="upload-input"] input {
 }
 input[type="text"],
 input[type="email"] {
-  -webkit-appearence: none;
   width: 100%;
   margin-bottom: 1em;
   border: 1px solid #ccc;
   border-bottom-color: #ddd;
   border-radius: 3px;
+  background: #fff;
+  background: linear-gradient(#f8f8f8, #fff);
   outline: none;
   color: #34a0ca;
   font-size: 1.2em;
@@ -97,12 +113,14 @@ input[type="email"] {
   max-width: 40em;
   margin: 0 auto 1em;
 }
-footer {
+body > footer {
   font-size: 0.8em;
   color: #666;
+  text-align: center;
+  font-style: italic;
 }
-footer dt,
-footer dd {
+body > footer dt,
+body > footer dd {
   display: inline-block;
   padding: 0;
   margin: 0;
