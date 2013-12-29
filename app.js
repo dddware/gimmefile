@@ -4,9 +4,11 @@
  */
 
 var express = require('express')
-  , create = require('./routes/create')
-  , bucket = require('./routes/bucket')
-  , upload = require('./routes/upload')
+  , routes = {
+      create: require('./routes/create')
+    , bucket: require('./routes/bucket')
+    , upload: require('./routes/upload')
+  }
   , http = require('http')
   , path = require('path')
   , livereload = require('express-livereload');
@@ -31,13 +33,13 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-app.get('/', create.get);
-app.post('/', create.post);
+app.get('/', routes.create.get);
+app.post('/', routes.create.post);
 
-app.get('/bucket/:secret', bucket.get);
+app.get('/bucket/:secret', routes.bucket.get);
 
-app.get('/upload/:id', upload.get);
-app.post('/upload/:id', upload.post);
+app.get('/upload/:id', routes.upload.get);
+app.post('/upload/:id', routes.upload.post);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  form.create-form(method="post", action="/")
+    section.create-form__content
+      h1.create-form__title Create a bucket
+      input.create-form__input--name(type="text", name="name")
+      input.create-form__input--description(type="text", name="description")
+      button.create-form__button(type="submit") create

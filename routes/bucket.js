@@ -6,5 +6,5 @@
 
 
 exports.get = function(req, res) {
-    res.render('bucket');
+  res.render('bucket');
 };

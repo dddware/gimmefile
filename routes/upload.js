@@ -8,22 +8,22 @@ var fs = require('fs');
 
 
 exports.get = function(req, res) {
-    res.render('upload');
+  res.render('upload');
 };
 
 
 
 exports.post = function(req, res) {
-    var upload;
+  var upload;
 
-    if (upload = req.files.upload) {
-        fs.readFile(upload.path, function (err, data) {
-            var dest = upload.path.replace(/\/tmp\//, __dirname + '/upload/');
+  if (upload = req.files.upload) {
+    fs.readFile(upload.path, function (err, data) {
+      var dest = upload.path.replace(/\/tmp\//, __dirname + '/upload/');
 
-            fs.writeFile(dest, data, function (err) {
-                console.log(err);
-                res.redirect("back");
-            });
-        });
-    }
+      fs.writeFile(dest, data, function (err) {
+        //console.log(err);
+        res.redirect("back");
+      });
+    });
+  }
 };

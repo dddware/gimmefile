@@ -9,7 +9,8 @@
     "express": "3.1.0",
     "jade": "*",
     "stylus": "*",
-    "mongoose": "~3.8.3"
+    "mongoose": "~3.8.3",
+    "crypto": "0.0.3"
   },
   "devDependencies": {
     "express-livereload": "0.0.24"
