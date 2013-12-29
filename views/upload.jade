@@ -5,13 +5,13 @@ block content
     section.upload-form__content
       h1.upload-form__title Upload a file to <br> "My bucket"
       label(for="upload-input")
-        .filename Glisser vos fichiers ou cliquer pour uploader
+        .filename Drag your files or click here to upload
         input#upload.upload-form__input(type="file", name="upload", multiple)
-      label(for="email") Votre email
+      label(for="email") Your email
       input#email(type="email", placeholder="victor.darras@gmail.com")
       .control.guests  
-        label(for="guest") Envoyer à 
+        label(for="guest") Send to 
         input#guest(type="email", placeholder="tom.panier@gmail.com")
-        a.more-guest + plus
+        a.more-guest + more
       .button-container
         button.upload-form__button(type="submit") upload
