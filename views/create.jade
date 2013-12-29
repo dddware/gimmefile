@@ -4,13 +4,7 @@ block content
   form.create-form.content(method="post", action="/")
     section.create-form__content
       h1.create-form__title Créer un bucket
-
-      if flash.error && flash.error.length
-        aside.alert-error
-          ul
-            each error in flash.error
-              li= error
-
+      include _alerts
       label Nom du bucket
       input.create-form__input--name(type="text", name="name", value=post.name)
       label Description

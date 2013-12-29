@@ -1,0 +1,23 @@
+if flash.error && flash.error.length
+  aside.alert-error
+    ul
+      each error in flash.error
+        li= error
+          
+if flash && flash.warning && flash.warning.length
+  aside.alert-warning
+    ul
+      each warning in flash.warning
+        li= warning
+          
+if flash && flash.info && flash.info.length
+  aside.alert-info
+    ul
+      each info in flash.info
+        li= info
+
+if flash && flash.success && flash.success.length
+  aside.alert-success
+    ul
+      each success in flash.success
+        li= success

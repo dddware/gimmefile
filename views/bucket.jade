@@ -3,11 +3,5 @@ extends layout
 block content
   section.bucket.content
     h1.bucket-name= bucket.name
-
-    if flash && flash.success && flash.success.length
-      aside.alert-success
-        ul
-          each i in flash.success
-            li= flash.success.shift()
-
+    include _alerts
     p.bucket-description= bucket.description
