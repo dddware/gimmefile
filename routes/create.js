@@ -1,10 +1,4 @@
-
-/*
- * GET home page.
- */
-
 require('../models/bucket');
-
 var mongoose = require('mongoose');
 var Bucket = mongoose.model('Bucket');
 

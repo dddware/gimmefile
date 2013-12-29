@@ -1,8 +1,3 @@
-
-/*
- * GET home page.
- */
-
 var fs = require('fs');
 
 
