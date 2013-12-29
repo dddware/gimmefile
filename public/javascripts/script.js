@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			fileName.innerHTML = filenames;
 		}
 		else (
-			fileName.innerHTML = "Please retry"
+			fileName.innerHTML = "Veuillez réessayer"
 		)
 	})
 

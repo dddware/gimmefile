@@ -2,5 +2,10 @@ extends layout
 
 block content
   section.bucket.content
-    h2.bucket__title My bucket
+    h1.bucket__title Mon bucket
+    if success
+        aside.create-form__alert--success
+          ul
+            each message in success
+              li= message
     p.bucket_description My soul felt so safe up here, no self-centered natives destroying our Earth. I am sane! I don't understand a word you're sayin'! ...there's another case study for anthropology. I ain't sayin' anything that could be construed as an apology...

@@ -28,8 +28,13 @@ exports.post = function(req, res) {
       name: req.body.name,
       description: req.body.description
     }, function (err, bucket) {
-      //console.log(err);
-      res.redirect('/bucket/' + bucket.secret);
+      if (err) {
+        res.render('create', { errors: err.errors });
+      } else {
+        req.session.success = req.session.success || [];
+        req.session.success.push('lolilol');
+        res.redirect('/bucket/' + bucket.secret);
+      }
     });
   };
 

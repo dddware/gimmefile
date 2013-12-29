@@ -3,14 +3,14 @@ extends layout
 block content
   form.upload-form.content(method="post", action="/upload", enctype="multipart/form-data")
     section.upload-form__content
-      h2.upload-form__title Upload a file to <br> "My bucket"
+      h2.upload-form__title Ajouter un fichier à <br> "Mon bucket"
       label(for="upload-input")
-        .filename Glisser vos fichiers ou cliquer pour uploader
+        .filename Faites glisser vos fichiers ou cliquez
         input#upload.upload-form__input(type="file", name="upload", multiple)
-      label(for="email") Votre email
+      label(for="email") Votre e-mail
       input#email(type="email", placeholder="victor.darras@gmail.com")
       .control.guests  
         label(for="guest") Envoyer à 
-        input#guest(type="email", placeholder="tom.panier@gmail.com")
+        input#guest(type="email", placeholder="tom.panier@free.fr")
         a.more-guest + plus
-      button.upload-form__button(type="submit") upload
+      button.upload-form__button(type="submit") Envoi

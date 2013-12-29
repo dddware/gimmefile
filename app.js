@@ -11,7 +11,8 @@ var express = require('express')
   }
   , http = require('http')
   , path = require('path')
-  , livereload = require('express-livereload');
+  , livereload = require('express-livereload')
+  , MongoStore = require('connect-mongo')(express);
 
 var app = express();
 livereload(app, { watchDir: process.cwd() });
@@ -27,6 +28,17 @@ app.configure(function(){
   app.use(app.router);
   app.use(require('stylus').middleware(__dirname + '/public'));
   app.use(express.static(path.join(__dirname, 'public')));
+  app.use(express.cookieParser());
+  app.use(express.session({
+    secret: 'gvrfuifufrhnvuezr,pciezrhr,ciio,fvbhj,eyhyhgnre,vkbhptoi,rvj;rcavhe;bj;vjgcjkehtrvhjb,etj,ho,it'
+  , store: new MongoStore({
+      url: 'mongodb://localhost/gimmefile'
+    })
+  }));
+  app.use(function (req, res, next) {
+    res.locals.success = req.session.success;
+    next();
+  });
 });
 
 app.configure('development', function(){

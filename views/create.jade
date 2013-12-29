@@ -3,9 +3,14 @@ extends layout
 block content
   form.create-form.content(method="post", action="/")
     section.create-form__content
-      h2.create-form__title Créer un bucket
+      h1.create-form__title Créer un bucket
+      if errors
+        aside.create-form__alert--error
+          ul
+            each error in errors
+              li= error
       label Nom du bucket
       input.create-form__input--name(type="text", name="name")
       label Description
       input.create-form__input--description(type="text", name="description")
-      button.create-form__button(type="submit") create
+      button.create-form__button(type="submit") Créer
