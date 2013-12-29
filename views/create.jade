@@ -13,4 +13,7 @@ block content
       input.create-form__input--name(type="text", name="name")
       label Description
       input.create-form__input--description(type="text", name="description")
-      button.create-form__button(type="submit") Créer
+      .button-container
+        button.third ?
+        button.second: a(href="/upload/0") upload
+        button.create-form__button(type="submit") Créer
