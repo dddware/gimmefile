@@ -14,7 +14,7 @@ module.exports =
 
   // Upload file to bucket
 
-, post = function(req, res) {
+, post: function(req, res) {
     var upload;
 
     if (upload = req.files.upload) {

@@ -1,6 +1,6 @@
-  var mongoose = require('mongoose')
-    , crypto = require('crypto')
-    , Schema = mongoose.Schema;
+var mongoose = require('mongoose')
+  , crypto = require('crypto')
+  , Schema = mongoose.Schema;
 
 
 
@@ -36,7 +36,4 @@ bucketSchema.statics.getUniqueSecret = function (callback) {
 
 
 
-// Rack it up
-
-var Bucket = mongoose.model('Bucket', bucketSchema);
-mongoose.connect('mongodb://localhost/gimmefile');
+module.exports = mongoose.model('Bucket', bucketSchema);

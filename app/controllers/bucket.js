@@ -1,6 +1,4 @@
-require('../models/bucket');
-var mongoose = require('mongoose');
-var Bucket = mongoose.model('Bucket');
+var Bucket = require('../models/bucket');
 
 
 

@@ -33,9 +33,6 @@ app.configure('production', function () {
 
 
 app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(__dirname, 'app', 'views'));
-app.set('view engine', 'jade');
-app.use(express.favicon());
 app.use(express.cookieParser());
 
 
@@ -95,42 +92,9 @@ app.use(function (req, res, next) {
 
 
 
-app.use(app.router);
-
-
-
-// 404 handling
-
-app.use(function (req, res, next) {
-  next(new Error(404));
-});
-
-
-
-// Error handling (dev)
-
-app.configure('development', function () {
-  app.use(express.errorHandler());
-
-});
-
-// Error handling (prod)
-
-app.configure('production', function () {
-  app.use(function (err, req, res, next) {
-    var code = parseInt(err.message);
-    code = code || 500;
-
-    res.status(code);
-    res.render('error/' + code);
-  });
-});
-
-
-
 // Routing
 
-app.use('/', require('/app')());
+app.use('/', require('./app')());
 
 
 

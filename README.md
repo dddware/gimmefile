@@ -1,6 +1,6 @@
 # Gimmefile
 
-Aplication de création d'url unique pour la réception de fichier.
+Application de création d'url unique pour la réception de fichier.
 
 ## Installation
 
@@ -33,4 +33,5 @@ supervisor server.js
 	- limiter le nombre de fichier uploadables;
 - page d'upload de fichier, accessible par l'url unique;
 
-- meilleure répartition des middlewares entre serveur et app (voire mise en place de module(s) dédié(s) ?)
+- meilleure répartition des middlewares (notamment la gestion des messages flash) entre serveur et app (voire mise en place de module(s) dédié(s) ?)
+- utiliser ça : https://github.com/LearnBoost/express-mongoose au lieu du bricolage maison ?
