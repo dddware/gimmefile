@@ -1,0 +1,7 @@
+{
+  "name": "gimmefile",
+  "private": true,
+  "devDependencies": {
+    "angular": "1.2"
+  }
+}
