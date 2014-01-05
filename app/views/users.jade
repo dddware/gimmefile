@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  div.content(data-ng-app="gimmefile", data-ng-controller="AppCtrl")
+    h1 {{ pageTitle }}
+
+    aside(data-ng-show="alert.message" data-ng-class="'alert-' + alert.type")
+      ul(data-ng-show="alert.multiple")
+        li(data-ng-repeat="item in alert.message") {{ item }}
+      p(data-ng-hide="alert.multiple") {{ alert.message }}
+      a.close(data-ng-click="hideAlert()") &times;
+
+    section(data-ng-view)
+
+block javascripts
+  script(src="/angular/angular.js")
+  script(src="/angular-resource/angular-resource.js")
+  script(src="/angular-route/angular-route.js")
+  script(src="/javascripts/app/app.js")
+  script(src="/javascripts/app/controllers.js")
+  script(src="/javascripts/app/services.js")

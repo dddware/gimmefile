@@ -1,6 +1,7 @@
 var bucket = require('./bucket')
   , create = require('./create')
-  , upload = require('./upload');
+  , upload = require('./upload')
+  , users = require('./users');
 
 
 
@@ -15,4 +16,10 @@ module.exports = function(app)
   app.post('/upload/:id', upload.post);
 
   app.get('/ddd', function (req, res, next) { next(new Error(418)); });
+
+
+
+  app.get('/test/', users.display);
+  app.get('/test', function (req, res) { res.redirect(req.url + '/') });
+  app.get('/partials/:name.html', users.partial);
 };
