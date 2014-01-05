@@ -10,7 +10,8 @@ Aplication de création d'url unique pour la réception de fichier.
 $ git clone git@github.com:dddware/gimmefile.git
 $ cd gimmefile
 $ npm install
-$ node app # ou npm start
+$ bower install
+$ node server # ou npm start
 ```
 
 ### Avec supervisor
@@ -19,7 +20,7 @@ Il est recommandé d'utiliser supervisor qui va assurer le redémarrage du serve
 
 ```shell
 npm install -g supervisor
-supervisor app.js
+supervisor server.js
 ```
 
 ## TODO
@@ -32,3 +33,4 @@ supervisor app.js
 	- limiter le nombre de fichier uploadables;
 - page d'upload de fichier, accessible par l'url unique;
 
+- meilleure répartition des middlewares entre serveur et app (voire mise en place de module(s) dédié(s) ?)
