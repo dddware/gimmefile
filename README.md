@@ -35,5 +35,3 @@ supervisor server.js
 
 - meilleure répartition des middlewares (notamment la gestion des messages flash) entre serveur et app (voire mise en place de module(s) dédié(s) ?)
 - utiliser ça : https://github.com/LearnBoost/express-mongoose au lieu du bricolage maison ?
-- https://github.com/panta/express-mongoose-resource ?
-- https://github.com/saintedlama/passport-local-mongoose ?

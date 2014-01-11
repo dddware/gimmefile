@@ -1,7 +1,10 @@
 var express = require('express')
   , mongoose = require('mongoose')
+  , passport = require('passport')
   , path = require('path')
-  , route = require('./controllers');
+  , route = require('./controllers')
+  , User = require('./models/user')
+  , LocalStrategy = require('passport-local').Strategy;
 
 
 
@@ -11,6 +14,16 @@ module.exports = function()
   app.set('views', path.join(__dirname, 'views'));
   app.set('view engine', 'jade');
   app.use(app.router);
+
+  mongoose.connect('mongodb://localhost/gimmefile');
+
+
+
+  // Passport
+  
+  passport.use(User.createStrategy());
+  passport.serializeUser(User.serializeUser());
+  passport.deserializeUser(User.deserializeUser());
 
 
 
@@ -43,7 +56,6 @@ module.exports = function()
 
 
 
-  mongoose.connect('mongodb://localhost/gimmefile');
   route(app);
 
   return app;

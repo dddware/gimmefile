@@ -1,3 +1,11 @@
+app.factory('User', function ($resource) {
+  return $resource('/users/:id', { id: '@_id' }, {
+    update: {
+      method: 'PUT'
+    }
+  });
+});
+
 app.factory('HttpErrorInterceptor', ['$rootScope', '$q', function ($rootScope, $q) {
   return {
     'response': function(response) {

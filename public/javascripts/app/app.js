@@ -12,10 +12,22 @@ app.config(['$locationProvider', '$httpProvider', '$routeProvider', function ($l
       controller: 'UsersCtrl'
     })
 
+    .when('/new', {
+      pageTitle: 'Nouvel utilisateur',
+      templateUrl: '/partials/form.html',
+      controller: 'NewUserCtrl'
+    })
+
     .when('/:id', {
-      pageTitle: 'Ajouter un utilisateur',
+      pageTitle: 'Voir l\'utilisateur',
       templateUrl: '/partials/user.html',
       controller: 'UserCtrl'
+    })
+
+    .when('/:id/edit', {
+      pageTitle: 'Modifier l\'utilisateur',
+      templateUrl: '/partials/form.html',
+      controller: 'EditUserCtrl'
     })
 
     .otherwise({

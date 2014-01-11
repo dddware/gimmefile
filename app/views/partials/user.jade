@@ -1,1 +1,5 @@
-p single view
+p id: {{ user._id }}
+p E-mail: {{ user.email }}
+a(data-ng-href="#!/{{ user._id }}/edit") Éditer
+&nbsp;-&nbsp;
+a(data-ng-click="destroy()") Supprimer

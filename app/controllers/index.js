@@ -3,6 +3,8 @@ var bucket = require('./bucket')
   , upload = require('./upload')
   , users = require('./users');
 
+require('express-resource');
+
 
 
 module.exports = function(app)
@@ -22,4 +24,6 @@ module.exports = function(app)
   app.get('/test/', users.display);
   app.get('/test', function (req, res) { res.redirect(req.url + '/') });
   app.get('/partials/:name.html', users.partial);
+
+  app.resource('users', users);
 };

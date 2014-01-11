@@ -1,1 +1,7 @@
-p list view
+ul(data-ng-show="users.length")
+  li(data-ng-repeat="user in users")
+    a(data-ng-href="#!/{{ user._id }}") {{ user.email }}
+
+p(data-ng-hide="users.length")
+  | No users yet bitch, 
+  a(href="#!/new") add one maybe?
