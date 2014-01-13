@@ -10,24 +10,23 @@ Application de création d'url unique pour la réception de fichier.
 $ git clone git@github.com:dddware/gimmefile.git
 $ cd gimmefile
 $ npm install
-$ node server # ou npm start
+$ node server
 ```
 
 ### Avec supervisor
 
-Il est recommandé d'utiliser supervisor qui va assurer le redémarrage du serveur Express lors de la modification des fichiers. Remplacez simplement la dernière étape par :
+Il est recommandé d'utiliser supervisor qui va assurer le redémarrage du serveur Express lors de la modification des fichiers.
 
 ```shell
 npm install -g supervisor
-supervisor server.js
+npm start
 ```
 
-## Angular et Browserify
+## Browserify
 
-Pour développer avec Angular/Browserify, il est nécessaire de lancer en plus :
+Le fichier JS front-end "compilé" via Browserify est inclus dans le dépôt. Pour le regénérer après une modification :
 
 ```shell
-$ bower install
 $ browserify public/javascripts/app/main.js -o public/javascripts/app.js
 ```
 

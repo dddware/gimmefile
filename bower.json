@@ -1,9 +1,0 @@
-{
-  "name": "gimmefile",
-  "private": true,
-  "devDependencies": {
-    "angular": "1.2",
-    "angular-resource": "~1.2.7",
-    "angular-route": "~1.2.7"
-  }
-}

@@ -1,5 +1,9 @@
 'use strict';
 
+require('angular/angular');
+require('angular-route/angular-route');
+require('angular-resource/angular-resource');
+
 var controllers = require('./controllers')
   , services = require('./services')
 
