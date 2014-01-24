@@ -1,13 +1,13 @@
-@import 'fontello.css'
+@import 'font.css'
 
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:400,300,700')
-@import url('http://fonts.googleapis.com/css?family=Arbutus+Slab');
+@import url('http://fonts.googleapis.com/css?family=Roboto+Condensed');
 
 
 blue = #34A0CA
 green = #40ED0E
 sansSerif = "open sans", "Helvetica", sans-serif
-serif = "Arbutus Slab", 'Georgia', "serif"
+serif = "Roboto Condensed", 'Georgia', "serif"
 *
   box-sizing border-box
 
@@ -91,17 +91,20 @@ body > header
     clear: both
     &:first-child i
       color: orange
+    &:nth-child(1) i
+      //.flip
     &:last-child i
       color: green
   p
     height: 100%
     text-align: left
     color: #333
-    padding: 2em 0
+    font-size: 1.4em
+    padding: 1.5em 0
     font-family: serif
   i
     color: blue
-    font-size: 8em
+    font-size: 6em
     margin-right: 30px
     float: left
 
