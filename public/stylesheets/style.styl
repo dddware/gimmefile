@@ -1,6 +1,10 @@
+@import 'fontello.css'
+
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:400,300,700')
 
+
 blue = #34A0CA
+green = #40ED0E
 sansSerif = "open sans", "Helvetica", sans-serif
 
 *
@@ -32,14 +36,17 @@ a
   padding 2em 
   box-shadow inset 0 13em 8em rgba(255,255,255,0.1)
 
-h1 , h2
-  text-align center
+h1 
   color blue
   font-weight 400
 
-.content h1
-  margin-top 0.5em
-  font-weight 100
+body > header h1
+  text-align: center
+.content 
+  h1
+    margin-top 0.5em
+    font-weight 300
+    text-align center
 
 .logo 
   display inline-block
@@ -51,7 +58,28 @@ h1 , h2
   text-shadow 0.2em -0.3em 0 gold, -0.2em -0.15em 0 orange
   border-radius 0.1em
 
+.home-container
+  max-width: 960px
+  min-height: 400px
+  margin: -2em auto
+  padding: 2em
+  background: #fff
+  text-align: left
 
+.primary-icons
+  font-size: 8em
+  text-align: center
+  color: blue
+
+  .third
+    display: inline-block
+    width: (100/3)%
+    &:first-child
+      color: orange
+    &:last-child
+      color: green
+  i
+    margin: 0 auto   
 
 .content
   position relative

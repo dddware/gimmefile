@@ -1,4 +1,5 @@
 var bucket = require('./bucket')
+  , home = require('./home')
   , create = require('./create')
   , upload = require('./upload')
   , users = require('./users');
@@ -11,6 +12,8 @@ module.exports = function(app)
 {
   app.get('/', create.get);
   app.post('/', create.post);
+
+  app.get('/home', home.get);
 
   app.get('/bucket/:secret', bucket.get);
 
