@@ -13,14 +13,6 @@ module.exports =
 
 
 
-  // Render partial
-
-, partial: function(req, res) {
-    res.render(path.join('partials', req.params.name));
-  }
-
-
-
   // GET /
 
 , index: function(req, res, next) {
