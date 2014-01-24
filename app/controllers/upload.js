@@ -1,4 +1,5 @@
-var fs = require('fs');
+var Bucket = require('../models/bucket')
+  , fs = require('fs');
 
 
 
@@ -6,8 +7,14 @@ module.exports =
 {
   // Display form
 
-  get: function(req, res) {
-    res.render('upload');
+  get: function(req, res, next) {
+    Bucket.findOne({ _id: req.params.id }, 'name description', function (err, bucket) {
+      if (! bucket) {
+        next(new Error(404));
+      } else {
+        res.render('upload', { bucket: bucket });
+      }
+    });
   }
 
 
