@@ -5,3 +5,12 @@ block content
     h1.bucket-name= bucket.name
     include _alerts
     p.bucket-description= bucket.description
+    ul.bucket-url
+      li
+        | Download page (you are here)
+        br
+        a(href=(url + uri))= url + uri
+      li
+        | Upload page
+        br
+        a(href=(url + "/upload/" + bucket._id))= url + "/upload/" + bucket._id
