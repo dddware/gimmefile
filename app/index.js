@@ -13,8 +13,20 @@ module.exports = function()
   var app = express();
   app.set('views', path.join(__dirname, 'views'));
   app.set('view engine', 'jade');
-  app.use(app.router);
 
+
+
+  // Partial class
+
+  app.use(function (req, res, next) {
+    var klass = req.url.split('/').pop() || 'home';
+    res.locals.partial = klass;
+    next();
+  });
+
+
+
+  app.use(app.router);
   mongoose.connect('mongodb://localhost/gimmefile');
 
 

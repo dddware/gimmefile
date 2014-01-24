@@ -10,10 +10,10 @@ require('express-resource');
 
 module.exports = function(app)
 {
-  app.get('/', create.get);
-  app.post('/', create.post);
+  app.get('/', home.get);
 
-  app.get('/home', home.get);
+  app.get('/create', create.get);
+  app.post('/create', create.post);
 
   app.get('/bucket/:secret', bucket.get);
 
