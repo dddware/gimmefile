@@ -22,15 +22,10 @@ npm install -g supervisor
 npm start
 ```
 
-## Browserify
+## Gulp
 
-Le fichier JS front-end "compilé" via Browserify est inclus dans le dépôt. Pour le regénérer après une modification :
-
-```shell
-$ browserify public/javascripts/app/main.js -o public/javascripts/app.js
-```
-
-Browserify vérifie les fichiers avec JSHint et les compile ensemble en suivant les inclusions de modules CommonJS.
+- Lancez `gulp` pour déclencher la génération des assets, le watch sur les assets et les vues, et l'ouverture du navigateur avec livereload.
+- Lancez `gulp --production` pour obtenir des assets minifiés prêts pour la mise en production.
 
 ## TODO
 
