@@ -3,7 +3,6 @@ html
   head
     title Gimmefile
     link(rel='stylesheet', href='/stylesheets/style.css')
-    != LRScript
   body(class=('page-' + partial))
 
     header
@@ -28,5 +27,6 @@ html
         dd
           a(href='http://expressjs.com/', target='_blank') express.js
 
-script(src="/javascripts/script.js")
+script(src="/assets/javascripts/script.js")
 block javascripts
+script(src="http://localhost:35729/livereload.js")
