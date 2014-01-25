@@ -70,7 +70,7 @@ app.use(function (req, res, next) {
 
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-app.use(require('stylus').middleware(path.join(__dirname, 'public')));
+//app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 //app.use(express.static(path.join(__dirname, 'bower_components')));
 
