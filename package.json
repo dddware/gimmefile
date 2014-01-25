@@ -19,7 +19,6 @@
     "express-resource": "~1.0.0"
   },
   "devDependencies": {
-    "express-livereload": "0.0.24",
     "napa": "~0.2.0",
     "gulp-livereload": "~0.2.0",
     "tiny-lr": "0.0.5",

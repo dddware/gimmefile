@@ -4,7 +4,6 @@ var express = require('express')
   , http = require('http')
   , path = require('path')
   , fs = require('fs')
-  , livereload = require('express-livereload')
   , MongoStore = require('connect-mongo')(express);
 
 
@@ -12,17 +11,15 @@ var express = require('express')
 // App
 
 var app = express();
-livereload(app, { watchDir: process.cwd() });
+app.set('port', process.env.PORT || 3000);
 
 
 
-// Logging (dev)
+// Logging
 
 app.configure('development', function () {
   app.use(express.logger('dev'));
 });
-
-// Logging (prod)
 
 app.configure('production', function () {
   var logStream = fs.createWriteStream(path.join(__dirname, 'app', 'production.log'), { flags: 'a' });
@@ -32,20 +29,15 @@ app.configure('production', function () {
 
 
 
-app.set('port', process.env.PORT || 3000);
+// Start session
+
 app.use(express.cookieParser());
-
-
-
-// Start session (dev)
 
 app.configure('development', function () {
   app.use(express.session({
     secret: 'ddd'
   }));
 });
-
-// Start session (prod)
 
 app.configure('production', function () {
   app.use(express.session({
