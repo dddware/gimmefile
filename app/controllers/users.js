@@ -1,5 +1,6 @@
 var path = require('path')
-  , User = require('../models/user');
+  , User = require('../models/user')
+  , HttpError = require('./HttpError');
 
 
 
@@ -45,7 +46,7 @@ module.exports =
       if (err) {
         res.send(err);
       } else if (! user) {
-        next(new Error(404));
+        next(new HttpError(404));
       } else {
         res.send(user);
       }
@@ -59,7 +60,7 @@ module.exports =
       if (err) {
         res.send(err);
       } else if (! user) {
-        next(new Error(404));
+        next(new HttpError(404));
       } else {
         var setEmailAndSave = function() {
           user.email = req.body.email;

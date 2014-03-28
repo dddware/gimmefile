@@ -34,7 +34,7 @@ module.exports =
           req.session.post.name = req.body.name;
           req.session.post.description = req.body.description;
 
-          res.redirect('/');
+          res.redirect('/create/');
         } else {
           req.session.flash.success.push('Bucket "' + bucket.name + '" créé avec succès');
 

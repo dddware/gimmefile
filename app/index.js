@@ -4,7 +4,8 @@ var express = require('express')
   , path = require('path')
   , route = require('./controllers')
   , User = require('./models/user')
-  , LocalStrategy = require('passport-local').Strategy;
+  , LocalStrategy = require('passport-local').Strategy
+  , HttpError = require('./HttpError');
 
 
 
@@ -19,8 +20,7 @@ module.exports = function()
   // Partial class
 
   app.use(function (req, res, next) {
-    var klass = req.url.split('/').pop() || 'home';
-    res.locals.partial = klass;
+    res.locals.partial = req.url.split('/').pop() || 'home';
     next();
   });
 
@@ -42,7 +42,7 @@ module.exports = function()
   // 404 handling
 
   app.use(function (req, res, next) {
-    next(new Error(404));
+    next(new HttpError(404));
   });
 
 
@@ -51,18 +51,17 @@ module.exports = function()
 
   app.configure('development', function () {
     app.use(express.errorHandler());
-
   });
 
   // Error handling (prod)
 
   app.configure('production', function () {
     app.use(function (err, req, res, next) {
-      var code = parseInt(err.message);
-      code = code || 500;
+      console.log(err);
+      statusCode = err.statusCode || 500;
 
-      res.status(code);
-      res.render('error/' + code);
+      res.status(statusCode);
+      res.render('error/' + statusCode);
     });
   });
 

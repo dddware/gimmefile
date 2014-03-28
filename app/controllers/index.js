@@ -2,7 +2,8 @@ var bucket = require('./bucket')
   , home = require('./home')
   , create = require('./create')
   , upload = require('./upload')
-  , users = require('./users');
+  , users = require('./users')
+  , HttpError = require('./HttpError');
 
 require('express-resource');
 
@@ -30,7 +31,7 @@ module.exports = function(app)
   app.post('/upload/:id', upload.post);
 
   // I'm a teapot
-  app.get('/ddd', function (req, res, next) { next(new Error(418)); });
+  app.get('/ddd', function (req, res, next) { next(new HttpError(418)); });
 
 
 
