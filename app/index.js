@@ -47,7 +47,7 @@ module.exports = function()
 
 
 
-  /*/ Error handling (dev)
+  // Error handling (dev)
 
   app.configure('development', function () {
     app.use(express.errorHandler());
@@ -55,8 +55,7 @@ module.exports = function()
 
   // Error handling (prod)
 
-  app.configure('production', function () {*/
-  app.configure('development', function () {
+  app.configure('production', function () {
     app.use(function (err, req, res, next) {
       console.log(err);
       statusCode = err.statusCode || 500;
