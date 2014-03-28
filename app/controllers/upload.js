@@ -1,5 +1,6 @@
 var Bucket = require('../models/bucket')
-  , fs = require('fs');
+  , fs = require('fs')
+  , HttpError = require('./HttpError');
 
 
 
@@ -10,7 +11,7 @@ module.exports =
   get: function(req, res, next) {
     Bucket.findOne({ _id: req.params.id }, 'name description', function (err, bucket) {
       if (! bucket) {
-        next(new Error(404));
+        next(new HttpError(404));
       } else {
         res.render('upload', { bucket: bucket });
       }
@@ -30,7 +31,7 @@ module.exports =
 
         fs.writeFile(dest, data, function (err) {
           //console.log(err);
-          res.redirect("back");
+          res.redirect('back');
         });
       });
     }
