@@ -3,7 +3,7 @@ var bucket = require('./bucket')
   , create = require('./create')
   , upload = require('./upload')
   , users = require('./users')
-  , HttpError = require('./HttpError');
+  , HttpError = require('../HttpError');
 
 require('express-resource');
 

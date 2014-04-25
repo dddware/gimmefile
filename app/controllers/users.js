@@ -1,6 +1,6 @@
 var path = require('path')
   , User = require('../models/user')
-  , HttpError = require('./HttpError');
+  , HttpError = require('../HttpError');
 
 
 

@@ -1,5 +1,5 @@
 var Bucket = require('../models/bucket')
-  , HttpError = require('./HttpError');
+  , HttpError = require('../HttpError');
 
 
 
